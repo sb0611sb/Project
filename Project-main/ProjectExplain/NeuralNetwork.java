@@ -1,7 +1,5 @@
 import java.util.ArrayList;  
 import java.util.List;       
-// List 인터페이스와 그 구현체 ArrayList를 사용
-// DenseLayer를 연결한 네트워크
 
 public class NeuralNetwork {                         
     // 신경망 전체를 표현하는 클래스
@@ -32,7 +30,7 @@ public class NeuralNetwork {
             // 각 레이어를 통과시키며 출력 갱신
         }
         return output;                                 
-        // 네트워크의 최종 예측 값
+        // 최종 예측 값
     }
     
     public void train(double[][] inputs, double[][] targets, int epochs) {  
@@ -73,7 +71,7 @@ public class NeuralNetwork {
             }
 
             double avgLoss = totalLoss / nSamples;     
-            // 에폭당 평균 손실 학습 상태를 모니터링
+            // 에폭당 평균 손실 학습
 
             if (epoch == 1 || epoch % 500 == 0 || epoch == epochs) { 
                 System.out.printf("Epoch %d, 평균 손실: %.6f%n", epoch, avgLoss);
@@ -82,4 +80,5 @@ public class NeuralNetwork {
         }
     }
 }
+
 
