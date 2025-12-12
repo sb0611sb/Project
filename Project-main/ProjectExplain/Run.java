@@ -8,7 +8,7 @@ public class Run {
         double learningRate = 0.5;             
         double momentum = 0.9;
         int epochs = 10000;
-        // XOR 문제: 입력 2개(0/1), 은닉층 노드 4개, 출력 1개
+        // 입력층 2개, 은닉층  4개, 출력층 1개
 
         ActivationFunction sigmoid = new SigmoidActivation(); 
         // 인터페이스 타입 변수에 구현체를 대입
@@ -56,3 +56,4 @@ public class Run {
     }
 }
 }
+
