@@ -6,18 +6,17 @@ public class DenseLayer {
     private final int inputSize;
     private final int outputSize;
 
-    private final double[][] weights;    // [input][output]
-    private final double[] biases;       // [output]
+    private final double[][] weights;   
+    private final double[] biases;       
 
-    // 모멘텀을 위한 velocity 
-    private final double[][] velocityW;  // [input][output]
-    private final double[] velocityB;    // [output]
+    
+    private final double[][] velocityW;  
+    private final double[] velocityB;   
 
     private final ActivationFunction activation;
     private double learningRate;
     private double momentum;
 
-    // 역전파를 위해 캐시
     private double[] lastInput;
     private double[] lastOutput;
 
@@ -61,7 +60,7 @@ public class DenseLayer {
     }
 
     /**
-     * 순전파: input -> output
+     * 순전파
      */
     public double[] forward(double[] input) {
         if (input.length != inputSize) {
@@ -79,7 +78,6 @@ public class DenseLayer {
             output[o] = activation.activate(sum);
         }
 
-        // 역전파에서 사용하기 위해 캐시
         this.lastInput = input.clone();
         this.lastOutput = output.clone();
 
@@ -137,3 +135,4 @@ public class DenseLayer {
         this.momentum = momentum;
     }
 }
+
