@@ -1,6 +1,5 @@
-public interface ActivationFunction {  
-    // interface: 메서드 형태만 선언
-    // 활성화 함수를 공통된 형태로 쓰기 위함
+public interface ActivationFunction { 
+    // 활성화 함수들의 공통된 메서드
 
     /**
      * 활성화 함수 f(x)
@@ -14,6 +13,7 @@ public interface ActivationFunction {
     // 역전파 때 필요
 
 }
+
 
 
 
