@@ -13,7 +13,7 @@ public class Run {
 
         NeuralNetwork nn = new NeuralNetwork(mse);
 
-        // 2 -> 4 -> 1 구조의 MLP
+        
         nn.addLayer(new DenseLayer(inputSize, hiddenSize, sigmoid, learningRate, momentum));
         nn.addLayer(new DenseLayer(hiddenSize, outputSize, sigmoid, learningRate, momentum));
 
@@ -44,3 +44,4 @@ public class Run {
         }
     }
 }
+
