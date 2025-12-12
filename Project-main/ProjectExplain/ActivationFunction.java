@@ -14,7 +14,7 @@ public interface ActivationFunction {
     // 역전파 때 필요
 
 }
-    // 이 인터페이스 덕분에 Sigmoid, ReLU 등 여러 함수로 쉽게 갈아끼울 수 있음
+
 
 
 
