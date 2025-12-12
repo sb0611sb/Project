@@ -19,7 +19,13 @@ public class DenseLayer {
     // [NN] w_ij는 입력 i에서 출력 j로 가는 가중치. b_j는 출력 뉴런 j의 바이어스.
     // 모멘텀을 위한 velocity (각 가중치/바이어스에 대해 하나씩)
     private final double[][] velocityW;  
-    private final double[] velocityB;    
+    private final double[] velocityB; 
+    private final ActivationFunction activation; 
+    private double learningRate;                
+    private double momentum;                    
+    // [Java] activation은 인터페이스 타입(다형성). learningRate, momentum은 향후 변경 가능하므로 non-final.
+    // [NN] activation: 시그모이드 등. learningRate: 파라미터 업데이트 스텝 크기. momentum: 과거 기울기 반영 정도.
+
     // [Java] 가중치와 동일한 크기의 배열. 모멘텀 알고리즘에서 “속도”를 저장.
     // [NN] v_ij, v_bj: 지난 gradient의 이동 방향 기억. SGD+Momentum 구현.
     // 역전파를 위해 캐시
@@ -201,6 +207,7 @@ private void initBiases() {
 }
     // [Java] DenseLayer 클래스 끝.
     // [NN] 이 레이어는 “Wx+b → 활성화 → backward + 모멘텀 업데이트”까지 담당하는 완전한 훈련 단위.
+
 
 
 
